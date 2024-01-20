@@ -8,6 +8,8 @@ export async function main(ns) {
 		"--cleanup": {"name": "cleanup", "type": "bool_yes"},
 		"--without": {"name": "without", "type": "list"},
 		"--print": {"name": "print", "type": "bool_yes"},
+		"--daemon": {"name": "daemon", "type": "bool_yes"},
+		"-d": {"alias": "--daemon"},
 	};
 	const parsed_args = parseargs(ns, args_structure);
 	const selected_target = parsed_args["target"];
@@ -15,13 +17,14 @@ export async function main(ns) {
 	const cleanup = parsed_args["cleanup"];
 	const without = parsed_args["without"];
 	const print_flag = parsed_args["print"];
+	const daemon = parsed_args["daemon"];
 
 	const cfg = [
+		[["home:2097152"], "sigma-cosmetics", 64, 56, 6],
 		[["fnx_01s"], "summit-uni", 32, 56, 6],
 		[["fnx_02s"], "neo-net", 80, 56, 6],
 		[["fnx_03s"], "the-hub", 32, 56, 6],
 		[["fnx_04s"], "foodnstuff", 16, 56, 6],
-		[["fnx_04s"], "sigma-cosmetics", 16, 56, 6],
 		[["fnx_04s"], "n00dles", 16, 56, 6],
 		[["fnx_06s"], "joesguns", 48, 56, 6],
 		[["fnx_07s"], "harakiri-sushi", 32, 56, 6],
@@ -83,6 +86,13 @@ export async function main(ns) {
 				args.push("--debug");
 
 			ns.exec(...args);
+		}
+	}
+
+	if (daemon) {
+		while (true) {
+			await ns.sleep(5000);
+			// print some statistics maybe
 		}
 	}
 }

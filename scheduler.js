@@ -26,7 +26,19 @@ export async function main(ns) {
 
 	const parsed_args = parseargs(ns, args_structure);
 
-	const hosts = parsed_args["host"];
+	const hosts_with_ram = parsed_args["host"];
+	let hosts = [];
+	let host_ram = [];
+	for (var i in hosts_with_ram) {
+		var s = hosts_with_ram[i].split(":");
+		hosts.push(s[0]);
+
+		if (s.length > 1)
+			host_ram.push(s[1]);
+		else
+			host_ram.push("max");
+	}
+
 	const target = parsed_args["target"];
 	const thread_multiplier = parsed_args["thread_multiplier"];
 	const grow_multiplier = parsed_args["grow_multplier"];
@@ -79,12 +91,15 @@ export async function main(ns) {
 	}
 
 	class Cluster {
-		constructor(hosts) {
+		constructor(hosts, host_ram) {
 			this.hosts = hosts;
 			this.ram = [];
 			this.used_ram = [];
 			for (var i in hosts) {
-				this.ram.push(ns.getServerMaxRam(hosts[i]) * 1.1);  // TODO FIX THIS DANGEROUS HACK
+				var max_ram = ns.getServerMaxRam(hosts[i]);
+				if (host_ram[i] != "max")
+					max_ram = Math.min(host_ram[i], max_ram);
+				this.ram.push(max_ram * 1.1);  // we'll be borrowing ram from the future scheduled processes
 				this.used_ram.push(0);
 			}
 		}
@@ -153,7 +168,7 @@ export async function main(ns) {
 	const set_time = Math.max(grow_time, weaken_time, hack_time);
 	const safety_margin = 100;
 
-	let cluster = new Cluster(hosts);
+	let cluster = new Cluster(hosts, host_ram);
 	let job_queue = new PriorityQueue((a, b) => a.time < b.time);
 	let event_queue = new PriorityQueue((a, b) => a.time < b.time);
 

@@ -1,9 +1,12 @@
 /** @param {NS} ns */
 export async function main(ns) {
-	const hostname = ns.args[0];
+	const hostname = ns.args[0].split(":")[0];
 	const target = ns.args[1];
 
-	const ram_used = ns.getServerMaxRam(hostname);
+	let ram_used = ns.getServerMaxRam(hostname);
+	if (ns.args[0].split(":").length > 1)
+		ram_used = Math.min(ns.args[0].split(":")[1], ram_used);
+
 	while (ns.getServerSecurityLevel(target) > ns.getServerMinSecurityLevel(target) || ns.getServerMaxMoney(target) > ns.getServerMoneyAvailable(target)) {
 		var weaken_time = ns.getWeakenTime(target);
 
