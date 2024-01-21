@@ -3,7 +3,7 @@
 ```sh
 expand.js
 ```
-For exploring and getting access automatically on servers. Note that backdooring and downloading interesting files may still have to be done manually. Simply fire `run expand.js`.
+For exploring and getting access automatically on servers. Note that backdooring and downloading interesting files may still have to be done manually. Simply fire `run expand.js`. Currently does some coding contracts as well.
 
 ```sh
 manager.js

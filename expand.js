@@ -1,4 +1,5 @@
-import { make_cyan, make_red } from "utils.js";
+import { make_cyan, make_red, make_yellow, make_brightyellow } from "utils.js";
+import { solve_coding_contract } from "solve_cc.js";
 
 
 export async function main(ns) {
@@ -17,6 +18,27 @@ export async function main(ns) {
 				ns.tprintf(`${make_cyan()} ${host}: money = ${ns.nFormat(ns.getServerMaxMoney(host), "$0.000a")}`);
 		} else {
 			ns.tprintf(`${make_red()} ${host}: hacking = ${ns.getServerRequiredHackingLevel(host)}, ports = ${ns.getServerNumPortsRequired(host)}`);
+		}
+
+		var local_files = ns.ls(host);
+		for (var i in local_files) {
+			var filename = local_files[i];
+			if (filename.endsWith(".cct")) {
+				var ctype = ns.codingcontract.getContractType(filename, host);
+				var cdata = ns.codingcontract.getData(filename, host);
+				ns.tprintf(`${make_yellow()} coding contract available: ${filename} (${ctype})`);
+				var result = solve_coding_contract(ns, ctype, cdata);
+				if (result != null) {
+					var reward = ns.codingcontract.attempt(result, filename, host);
+					if (reward)
+						ns.tprintf(`${make_brightyellow()} contract solved successfully: ${reward}`);
+					else
+						ns.tprintf(`${make_brightyellow()} failed to solve the contract`);
+				}
+			} else if (!ns.fileExists(filename, "home")) {
+				ns.tprintf(`${make_yellow()} downloading: ${filename}`);
+				ns.scp(filename, "home", host);
+			}
 		}
 
 		visited.add(host);
