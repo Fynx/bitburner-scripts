@@ -1,5 +1,6 @@
 import { CodingContract } from "cc/coding_contract.js";
 
+
 export class MinimumPathSumInATriangle extends CodingContract {
 	solve(ns, data) {
 		var t = [];

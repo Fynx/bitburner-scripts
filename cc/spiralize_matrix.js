@@ -1,5 +1,6 @@
 import { CodingContract } from "cc/coding_contract.js";
 
+
 export class SpiralizeMatrix extends CodingContract {
 	solve(ns, data) {
 		function range(e1, e2) {

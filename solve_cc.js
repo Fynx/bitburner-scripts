@@ -4,24 +4,23 @@ import { MinimumPathSumInATriangle } from "cc/minimum_path_sum_in_a_triangle.js"
 import { SpiralizeMatrix } from "cc/spiralize_matrix.js";
 import { IntegerToEncodedBinary } from "cc/integer_to_encoded_binary.js";
 import { EncodedBinaryToInteger } from "cc/encoded_binary_to_integer.js";
-import { ArrayJumpingGame2 } from "cc/array_jumping_game_2";
-import { SanitizeParenthesesInExpression } from "cc/sanitize_parentheses_in_expressions.js";
+import { ArrayJumpingGame1 } from "cc/array_jumping_game_1.js";
+import { ArrayJumpingGame2 } from "cc/array_jumping_game_2.js";
+import { UniquePathsInAGrid1 } from "cc/unique_paths_in_a_grid_1.js";
 import { UniquePathsInAGrid2 } from "cc/unique_paths_in_a_grid_2.js";
 import { CaesarCipher } from "cc/caesar_cipher.js";
 import { TotalWaysToSum1 } from "cc/total_ways_to_sum_1.js";
+import { TotalWaysToSum2 } from "cc/total_ways_to_sum_2.js";
+import { FindLargestPrimeFactor } from "cc/find_largest_prime_factor.js";
 
-
-class FindLargestPrimeFactor extends CodingContract {}
 class SubarrayWithMaximumSum extends CodingContract {}
-class TotalWaysToSum2 extends CodingContract {}
-class ArrayJumpingGame1 extends CodingContract {}
 class MergeOverlappingIntervals extends CodingContract {}
 class GenerateIPAddresses extends CodingContract {}
 class AlgorithmicStockTrader1 extends CodingContract {}
 class AlgorithmicStockTrader2 extends CodingContract {}
 class AlgorithmicStockTrader3 extends CodingContract {}
 class AlgorithmicStockTrader4 extends CodingContract {}
-class UniquePathsInAGrid1 extends CodingContract {}
+class SanitizeParenthesesInExpression extends CodingContract {}
 class FindAllValidMathExpressions extends CodingContract {}
 class ProperTwoColoringOfAGraph extends CodingContract {}
 class RLECompression extends CodingContract {}

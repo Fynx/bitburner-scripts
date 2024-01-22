@@ -1,5 +1,6 @@
 import { CodingContract } from "cc/coding_contract.js";
 
+
 export class UniquePathsInAGrid2 extends CodingContract {
 	solve(ns, data) {
 		function make_key(x, y) {
