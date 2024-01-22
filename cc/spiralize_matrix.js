@@ -1,6 +1,5 @@
 import { CodingContract } from "cc/coding_contract.js";
 
-
 export class SpiralizeMatrix extends CodingContract {
 	solve(ns, data) {
 		function range(e1, e2) {
@@ -30,9 +29,11 @@ export class SpiralizeMatrix extends CodingContract {
 				return subarray(min_x, max_x, min_y, max_y);
 
 			var result = subarray(min_x, max_x, min_y, min_y);
-			result = result.concat(subarray(max_x, max_x, min_y + 1, max_y));
-			result = result.concat(subarray(max_x - 1, min_x, max_y, max_y));
-			result = result.concat(subarray(min_x, min_x, max_y - 1, min_y + 1));
+			if (max_y - min_y > 1)
+				result = result.concat(subarray(max_x, max_x, min_y + 1, max_y - 1));
+			result = result.concat(subarray(max_x, min_x, max_y, max_y));
+			if (max_y - min_y > 1)
+				result = result.concat(subarray(min_x, min_x, max_y - 1, min_y + 1));
 			if (max_x - min_x > 1 && max_y - min_y > 1)
 				result = result.concat(walk(min_x + 1, max_x - 1, min_y + 1, max_y - 1));
 			return result;

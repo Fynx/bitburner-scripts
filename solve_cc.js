@@ -15,13 +15,13 @@ import { FindLargestPrimeFactor } from "cc/find_largest_prime_factor.js";
 import { ProperTwoColoringOfAGraph } from "cc/proper_two_coloring_of_a_graph.js";
 import { MergeOverlappingIntervals } from "cc/merge_overlapping_intervals.js";
 import { AlgorithmicStockTrader1 } from "cc/algorithmic_stock_trader_1.js";
+import { AlgorithmicStockTrader2 } from "cc/algorithmic_stock_trader_2.js";
+import { AlgorithmicStockTrader3 } from "cc/algorithmic_stock_trader_3.js";
 import { AlgorithmicStockTrader4 } from "cc/algorithmic_stock_trader_4.js";
+import { GenerateIPAddresses } from "cc/generate_ip_addresses.js";
 
 
 class SubarrayWithMaximumSum extends CodingContract {}
-class GenerateIPAddresses extends CodingContract {}
-class AlgorithmicStockTrader2 extends CodingContract {}
-class AlgorithmicStockTrader3 extends CodingContract {}
 class SanitizeParenthesesInExpression extends CodingContract {}
 class FindAllValidMathExpressions extends CodingContract {}
 class RLECompression extends CodingContract {}
