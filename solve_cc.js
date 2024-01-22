@@ -2,13 +2,19 @@ import { ShortestPathInAGrid } from "cc/shortest_path_in_a_grid.js";
 import { CodingContract } from "cc/coding_contract.js";
 import { MinimumPathSumInATriangle } from "cc/minimum_path_sum_in_a_triangle.js";
 import { SpiralizeMatrix } from "cc/spiralize_matrix.js";
+import { IntegerToEncodedBinary } from "cc/integer_to_encoded_binary.js";
+import { EncodedBinaryToInteger } from "cc/encoded_binary_to_integer.js";
+import { ArrayJumpingGame2 } from "cc/array_jumping_game_2";
+import { SanitizeParenthesesInExpression } from "cc/sanitize_parentheses_in_expressions.js";
+import { UniquePathsInAGrid2 } from "cc/unique_paths_in_a_grid_2.js";
+import { CaesarCipher } from "cc/caesar_cipher.js";
+import { TotalWaysToSum1 } from "cc/total_ways_to_sum_1.js";
+
 
 class FindLargestPrimeFactor extends CodingContract {}
 class SubarrayWithMaximumSum extends CodingContract {}
-class TotalWaysToSum1 extends CodingContract {}
 class TotalWaysToSum2 extends CodingContract {}
 class ArrayJumpingGame1 extends CodingContract {}
-class ArrayJumpingGame2 extends CodingContract {}
 class MergeOverlappingIntervals extends CodingContract {}
 class GenerateIPAddresses extends CodingContract {}
 class AlgorithmicStockTrader1 extends CodingContract {}
@@ -16,16 +22,11 @@ class AlgorithmicStockTrader2 extends CodingContract {}
 class AlgorithmicStockTrader3 extends CodingContract {}
 class AlgorithmicStockTrader4 extends CodingContract {}
 class UniquePathsInAGrid1 extends CodingContract {}
-class UniquePathsInAGrid2 extends CodingContract {}
-class SanitizeParenthesesInExpression extends CodingContract {}
 class FindAllValidMathExpressions extends CodingContract {}
-class IntegerToEncodedBinary extends CodingContract {}
-class EncodedBinaryToInteger extends CodingContract {}
 class ProperTwoColoringOfAGraph extends CodingContract {}
 class RLECompression extends CodingContract {}
 class LZDecompression extends CodingContract {}
 class LZCompression extends CodingContract {}
-class CaesarCipher extends CodingContract {}
 class VigenereCipher extends CodingContract {}
 
 export function solve_coding_contract(ns, ctype, data) {
