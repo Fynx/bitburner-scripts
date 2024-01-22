@@ -14,8 +14,6 @@ export class TotalWaysToSum2 extends CodingContract {
 			return count(sum, index + 1) + count(sum + input[index], index);
 		}
 
-		var options = new Array(input.length);
-
 		return count(0, 0);
 	}
 }

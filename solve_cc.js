@@ -12,17 +12,18 @@ import { CaesarCipher } from "cc/caesar_cipher.js";
 import { TotalWaysToSum1 } from "cc/total_ways_to_sum_1.js";
 import { TotalWaysToSum2 } from "cc/total_ways_to_sum_2.js";
 import { FindLargestPrimeFactor } from "cc/find_largest_prime_factor.js";
+import { ProperTwoColoringOfAGraph } from "cc/proper_two_coloring_of_a_graph.js";
+import { MergeOverlappingIntervals } from "cc/merge_overlapping_intervals.js";
+import { AlgorithmicStockTrader1 } from "cc/algorithmic_stock_trader_1.js";
+import { AlgorithmicStockTrader4 } from "cc/algorithmic_stock_trader_4.js";
+
 
 class SubarrayWithMaximumSum extends CodingContract {}
-class MergeOverlappingIntervals extends CodingContract {}
 class GenerateIPAddresses extends CodingContract {}
-class AlgorithmicStockTrader1 extends CodingContract {}
 class AlgorithmicStockTrader2 extends CodingContract {}
 class AlgorithmicStockTrader3 extends CodingContract {}
-class AlgorithmicStockTrader4 extends CodingContract {}
 class SanitizeParenthesesInExpression extends CodingContract {}
 class FindAllValidMathExpressions extends CodingContract {}
-class ProperTwoColoringOfAGraph extends CodingContract {}
 class RLECompression extends CodingContract {}
 class LZDecompression extends CodingContract {}
 class LZCompression extends CodingContract {}
