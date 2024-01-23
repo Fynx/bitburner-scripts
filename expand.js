@@ -1,5 +1,6 @@
-import { make_cyan, make_red, make_yellow, make_brightyellow } from "utils.js";
+import { make_cyan, make_red, make_yellow, make_brightyellow } from "lib/utils.js";
 import { solve_coding_contract } from "solve_cc.js";
+import { inject_command } from "lib/inject_command.js";
 
 
 export async function main(ns) {
@@ -31,11 +32,11 @@ export async function main(ns) {
 				if (result != null) {
 					var reward = ns.codingcontract.attempt(result, filename, host);
 					if (reward)
-						ns.tprintf(`${make_brightyellow()} contract solved successfully: ${reward}`);
+						ns.tprintf(`${make_brightyellow()}   contract solved successfully: ${reward}`);
 					else
-						ns.tprintf(`${make_brightyellow()} failed to solve the contract`);
+						ns.tprintf(`${make_brightyellow()}   failed to solve the contract`);
 				}
-			} else if (!ns.fileExists(filename, "home")) {
+			} else if (!filename.endsWith(".js") && !ns.fileExists(filename, "home")) {
 				ns.tprintf(`${make_yellow()} downloading: ${filename}`);
 				ns.scp(filename, "home", host);
 			}
@@ -79,22 +80,8 @@ export async function main(ns) {
 
 				ns.nuke(host);
 
-				ns.tprint("it's open. NEED TO BACKDOOR!");
-				// add singularity call for automatic backdoor when available
-			}
-
-			if (ns.hasRootAccess(host)) {
-				/* uncomment and run with some script if need to use these hosts ram
-				if (ns.getServerMaxMoney(host) > 0) {
-					ns.scp(script_name, host, parent);
-					ns.tprint("max: " + ns.getServerMaxRam(host) + ", ram_per_process: " + ram_per_process);
-					var thread_cnt = Math.floor(ns.getServerMaxRam(host) / ram_per_process);
-					if (thread_cnt > 0) {
-						ns.tprint("running " + thread_cnt + " threads on " + host);
-						ns.exec(script_name, host, thread_cnt, host);
-					}
-				}
-				*/
+				inject_command(`connect ${parent}; connect ${host}; backdoor; home`);
+				// add singularity call for regular backdoor when available
 			}
 		}
 
