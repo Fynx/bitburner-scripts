@@ -1,33 +1,31 @@
-import { ShortestPathInAGrid } from "cc/shortest_path_in_a_grid.js";
-import { CodingContract } from "cc/coding_contract.js";
-import { MinimumPathSumInATriangle } from "cc/minimum_path_sum_in_a_triangle.js";
-import { SpiralizeMatrix } from "cc/spiralize_matrix.js";
-import { IntegerToEncodedBinary } from "cc/integer_to_encoded_binary.js";
-import { EncodedBinaryToInteger } from "cc/encoded_binary_to_integer.js";
-import { ArrayJumpingGame1 } from "cc/array_jumping_game_1.js";
-import { ArrayJumpingGame2 } from "cc/array_jumping_game_2.js";
-import { UniquePathsInAGrid1 } from "cc/unique_paths_in_a_grid_1.js";
-import { UniquePathsInAGrid2 } from "cc/unique_paths_in_a_grid_2.js";
-import { CaesarCipher } from "cc/caesar_cipher.js";
-import { TotalWaysToSum1 } from "cc/total_ways_to_sum_1.js";
-import { TotalWaysToSum2 } from "cc/total_ways_to_sum_2.js";
-import { FindLargestPrimeFactor } from "cc/find_largest_prime_factor.js";
-import { ProperTwoColoringOfAGraph } from "cc/proper_two_coloring_of_a_graph.js";
-import { MergeOverlappingIntervals } from "cc/merge_overlapping_intervals.js";
 import { AlgorithmicStockTrader1 } from "cc/algorithmic_stock_trader_1.js";
 import { AlgorithmicStockTrader2 } from "cc/algorithmic_stock_trader_2.js";
 import { AlgorithmicStockTrader3 } from "cc/algorithmic_stock_trader_3.js";
 import { AlgorithmicStockTrader4 } from "cc/algorithmic_stock_trader_4.js";
+import { ArrayJumpingGame1 } from "cc/array_jumping_game_1.js";
+import { ArrayJumpingGame2 } from "cc/array_jumping_game_2.js";
+import { CaesarCipher } from "cc/caesar_cipher.js";
+import { EncodedBinaryToInteger } from "cc/encoded_binary_to_integer.js";
+import { FindAllValidMathExpressions } from "cc/find_all_valid_math_expressions.js";
+import { FindLargestPrimeFactor } from "cc/find_largest_prime_factor.js";
 import { GenerateIPAddresses } from "cc/generate_ip_addresses.js";
+import { IntegerToEncodedBinary } from "cc/integer_to_encoded_binary.js";
+import { LZDecompression } from "cc/lz_decompression.js";
+import { LZCompression } from "cc/lz_compression.js";
+import { MergeOverlappingIntervals } from "cc/merge_overlapping_intervals.js";
+import { MinimumPathSumInATriangle } from "cc/minimum_path_sum_in_a_triangle.js";
+import { ProperTwoColoringOfAGraph } from "cc/proper_two_coloring_of_a_graph.js";
+import { RLECompression } from "cc/rle_compression.js";
+import { ShortestPathInAGrid } from "cc/shortest_path_in_a_grid.js";
+import { SanitizeParenthesesInExpression } from "cc/sanitize_parentheses_in_expression.js";
+import { SpiralizeMatrix } from "cc/spiralize_matrix.js";
+import { SubarrayWithMaximumSum } from "cc/subarray_with_maximum_sum.js";
+import { TotalWaysToSum1 } from "cc/total_ways_to_sum_1.js";
+import { TotalWaysToSum2 } from "cc/total_ways_to_sum_2.js";
+import { UniquePathsInAGrid1 } from "cc/unique_paths_in_a_grid_1.js";
+import { UniquePathsInAGrid2 } from "cc/unique_paths_in_a_grid_2.js";
+import { VigenereCipher } from "cc/vigenere_cipher.js";
 
-
-class SubarrayWithMaximumSum extends CodingContract {}
-class SanitizeParenthesesInExpression extends CodingContract {}
-class FindAllValidMathExpressions extends CodingContract {}
-class RLECompression extends CodingContract {}
-class LZDecompression extends CodingContract {}
-class LZCompression extends CodingContract {}
-class VigenereCipher extends CodingContract {}
 
 export function solve_coding_contract(ns, ctype, data) {
 	const ctypes = {
@@ -62,9 +60,13 @@ export function solve_coding_contract(ns, ctype, data) {
 	return new ctypes[ctype].constructor().solve(ns, data);
 }
 
+export function autocomplete(data, args) {
+    return [...data.servers];
+}
+
 export function main(ns) {
-	const filename = ns.args[0];
-	const host = ns.args[1];
+	const host = ns.args[0];
+	const filename = ns.args[1];
 
 	const ctype = ns.codingcontract.getContractType(filename, host);
 	const cdata = ns.codingcontract.getData(filename, host);

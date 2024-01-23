@@ -1,5 +1,5 @@
 import { CodingContract } from "cc/coding_contract.js";
-import { hamming_codes_encoded_binary_to_integer } from "cc/hamming.js";
+import { hamming_codes_encoded_binary_to_integer } from "resource/hamming.js";
 
 
 export class EncodedBinaryToInteger extends CodingContract {

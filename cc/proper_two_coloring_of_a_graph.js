@@ -15,12 +15,15 @@ export class ProperTwoColoringOfAGraph extends CodingContract {
 		});
 
 		let colors = Array(n);
+		let failed = false;
 
 		function run_color(node, color) {
 			edge_list[node].forEach((v, i, a) => {
 				if (colors[v] === undefined) {
 					colors[v] = color;
 					run_color(v, (color + 1) % 2);
+				} else if (colors[v] == colors[node]) {
+					failed = true;
 				}
 			});
 		}
@@ -32,6 +35,8 @@ export class ProperTwoColoringOfAGraph extends CodingContract {
 			}
 		}
 
+		if (failed)
+			return [];
 		return colors;
 	}
 }
